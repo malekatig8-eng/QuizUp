@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CreateQuizRouteImport } from './routes/create-quiz'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as QuizTypesRouteImport } from './routes/quiz-types'
+import { Route as SignupRouteImport } from './routes/signup'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreateQuizRoute = CreateQuizRouteImport.update({
+  id: '/create-quiz',
+  path: '/create-quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizTypesRoute = QuizTypesRouteImport.update({
+  id: '/quiz-types',
+  path: '/quiz-types',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/create-quiz': typeof CreateQuizRoute
+  '/login': typeof LoginRoute
+  '/quiz-types': typeof QuizTypesRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/create-quiz': typeof CreateQuizRoute
+  '/login': typeof LoginRoute
+  '/quiz-types': typeof QuizTypesRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/create-quiz': typeof CreateQuizRoute
+  '/login': typeof LoginRoute
+  '/quiz-types': typeof QuizTypesRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/create-quiz' | '/login' | '/quiz-types' | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/create-quiz' | '/login' | '/quiz-types' | '/signup'
+  id: '__root__' | '/' | '/create-quiz' | '/login' | '/quiz-types' | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CreateQuizRoute: typeof CreateQuizRoute
+  LoginRoute: typeof LoginRoute
+  QuizTypesRoute: typeof QuizTypesRoute
+  SignupRoute: typeof SignupRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/create-quiz': {
+      id: '/create-quiz'
+      path: '/create-quiz'
+      fullPath: '/create-quiz'
+      preLoaderRoute: typeof CreateQuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz-types': {
+      id: '/quiz-types'
+      path: '/quiz-types'
+      fullPath: '/quiz-types'
+      preLoaderRoute: typeof QuizTypesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CreateQuizRoute: CreateQuizRoute,
+  LoginRoute: LoginRoute,
+  QuizTypesRoute: QuizTypesRoute,
+  SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application conventions
+- Keep screen routes thin and reuse QuizUp screen components; shared presentation prevents authentication screens from drifting.
+- Keep authentication simulated and quiz drafts in React state until real accounts or persistence are requested; the current app is an interactive frontend prototype.
+- Keep quiz validation in a pure browser-safe module with focused tests so publishing rules remain consistent.
