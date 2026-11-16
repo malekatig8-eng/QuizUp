@@ -6,8 +6,8 @@ export function newQuestion(): Question {
 }
 export function validateQuiz(title: string, questions: Question[]) {
   const errors: Record<string, string> = {};
-  if (!title.trim()) errors.title = "Please enter a quiz title.";
-  if (questions.length === 0) errors.questions = "Add at least one question.";
+  if (!title.trim()) errors['title'] = "Please enter a quiz title.";
+  if (questions.length === 0) errors['questions'] = "Add at least one question.";
   questions.forEach((q) => {
     if (!q.text.trim()) errors[q.id] = "Please enter your question.";
     else if (q.options.length !== 4 || q.options.some((option) => !option.trim())) errors[q.id] = "Fill in all four answer options.";

@@ -1,4 +1,4 @@
 # QuizUp
-- [ ] Build the four screens and simulated sign-in navigation.
-- [ ] Implement question editing and publishing validation.
-- [ ] Verify navigation, quiz creation, and mobile layout.
+- [x] Build the four screens and simulated sign-in navigation.
+- [x] Implement question editing and publishing validation.
+- [x] Verify navigation, quiz creation, and mobile layout.
