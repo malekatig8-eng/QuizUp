@@ -162,7 +162,7 @@
   }
 }
 
-.app-header { height: 76px; border-bottom: 1px solid var(--border); background: var(--background); display: flex; align-items: center; justify-content: space-between; padding: 0 6%; gap: 20px; }
+.app-header { height: 64px; border-bottom: 1px solid var(--border); background: var(--background); display: flex; align-items: center; justify-content: space-between; padding: 0 6%; gap: 20px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 700; color: var(--foreground); }
 .logo svg { width: 35px; height: 35px; stroke-width: 2.2; }
 .header-right { display: flex; align-items: center; gap: 24px; font-size: 13px; color: var(--muted-foreground); }
@@ -172,11 +172,11 @@
 .quiz-button:hover { transform: translateY(-1px); }
 .avatar-button { border-radius: 50%; background: var(--secondary); color: var(--primary); width: 40px; height: 40px; border: 1px solid var(--border); }
 .avatar-menu { position: absolute; right: 0; top: 50px; width: 160px; padding: 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--background); box-shadow: var(--shadow-hover); z-index: 10; }
-.auth-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100svh - 76px); }
+.auth-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100svh - 64px); }
 .auth-promo { background: var(--promo); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 65px 32px; }
 .auth-promo::before, .auth-promo::after { content: ""; position: absolute; border-radius: 50%; width: 650px; height: 650px; left: -390px; bottom: -445px; background: var(--promo-curve); }
 .auth-promo::after { width: 770px; height: 770px; left: -480px; bottom: -515px; background: var(--promo-curve-light); }
-.promo-content { position: relative; z-index: 1; width: 340px; text-align: center; }
+.promo-content { position: relative; z-index: 1; width: 440px; max-width: 100%; text-align: center; }
 .promo-content h1 { font-size: 54px; line-height: 1.2; font-weight: 700; margin: 0 0 22px; }
 .promo-content p { color: var(--muted-foreground); font-size: 17px; line-height: 1.8; margin: 0; }
 .trophy-image { width: 265px; height: 265px; object-fit: contain; margin: 36px auto 0; }
