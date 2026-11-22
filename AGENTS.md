@@ -31,5 +31,5 @@ use the editor.
 
 ## Application conventions
 - Keep screen routes thin and reuse QuizUp screen components; shared presentation prevents authentication screens from drifting.
-- Keep authentication simulated and quiz drafts in React state until real accounts or persistence are requested; the current app is an interactive frontend prototype.
+- Accounts, categories, and published quizzes are stored by the Express API in `backend/`. Only the author can delete a quiz or a category they created. Built-in categories cannot be changed. Google sign-in stays simulated.
 - Keep quiz validation in a pure browser-safe module with focused tests so publishing rules remain consistent.

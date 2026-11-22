@@ -1,5 +1,5 @@
 export const categories = ["Programming", "Math", "General Knowledge", "Science"] as const;
-export type Category = (typeof categories)[number];
+export type Category = string;
 export type Question = { id: string; text: string; options: string[]; correct: number | null };
 export function newQuestion(): Question {
   return { id: crypto.randomUUID(), text: "", options: ["", "", "", ""], correct: null };
