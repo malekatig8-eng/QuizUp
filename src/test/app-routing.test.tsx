@@ -14,4 +14,13 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches the user and admin pages", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    const paths = ["/dashboard", "/quizzes", "/profile", "/quiz/python-basics", "/quiz/python-basics/results", "/admin", "/admin/users", "/admin/quizzes", "/admin/categories", "/login", "/signup", "/quiz-types", "/create-quiz"];
+
+    for (const path of paths) {
+      expect(router.matchRoutes(path).at(-1)?.routeId).not.toBe(rootRouteId);
+    }
+  });
 });
